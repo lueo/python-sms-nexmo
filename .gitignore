@@ -37,3 +37,6 @@ nosetests.xml
 # virtualenv
 include/
 man/
+
+# password
+smssend.cfg

@@ -5,7 +5,13 @@ Send your SMS by nexmo in one line.
 
 **tl;dr**
 
+1. Get a nexmo account and find your API_KEY and API_SECRET
+
 ```bash
+echo "[Password]
+api_key = xxxxxx
+api_secret = xxxxxx" > smssend.cfg
+
 # python sendsms.py <FROM>       <TO>         <MESSAGES>     --country <COUNTRY_CODE>
 $ python sendsms.py 0982-532-661 0917-878-979 "How are you?" --country TW
 # useful options:
