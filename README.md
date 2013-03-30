@@ -29,17 +29,22 @@ Usage
 
 ### Config files (required)
 
-Default config file is ``smssend.cfg``.
+Default config file is ``smssend.cfg``. (**Warning!** This file is readable in plain text.)
 
-**Warning!** This file is readable in plain text.
+The syntax of the config file is very simple. See the following:
 
-If you need to secure this file, please place it in a encrypted driver.
+```
+[Password]
+api_key = xxxxxx
+api_secret = xxxxxx
+```
 
-Then read it by specify ``--config`` option (or ``-c``).
+If you want to secure this file, please place it in a encrypted driver. Then read it by specify ``--config`` option (or ``-c``).
 
 For example:
 ```bash
 $ python sendsms.py <FROM> <TO> <MESSAGE> --config "D:\enc\sms.cfg"
+$ python sendsms.py <FROM> <TO> <MESSAGE> --c "D:\enc\sms.cfg"
 ```
 ### Country code (optional)
 
