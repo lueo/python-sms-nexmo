@@ -8,8 +8,8 @@ Send your SMS by nexmo in one line.
 1. Get a [NEXMO](http://nexmo.com/, "Get a nexmo account") account and find your ``API_KEY`` and ``API_SECRET``
 
     ```bash
-    echo "[Password] \
-    api_key = xxxxxx \
+    echo "[Password]
+    api_key = xxxxxx
     api_secret = xxxxxx" > smssend.cfg
     ```
 
