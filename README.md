@@ -7,21 +7,22 @@ Send your SMS by nexmo in one line.
 
 1. Get a [NEXMO](http://nexmo.com/, "Get a nexmo account") account and find your ``API_KEY`` and ``API_SECRET``
 
-```bash
-echo "[Password] \
-api_key = xxxxxx \
-api_secret = xxxxxx" > smssend.cfg
-```
+    ```bash
+    echo "[Password] \
+    api_key = xxxxxx \
+    api_secret = xxxxxx" > smssend.cfg
+    ```
 
 2. Send SMS!
-```bash
-# python sendsms.py <FROM>       <TO>         <MESSAGES>    
-$ python sendsms.py 0982-532-661 0917-878-979 "How are you?" 
-# useful options:
- --dry     Dry run
- --debug   Debug
- --country Country code. Default: TW
-```
+
+    ```bash
+    # python sendsms.py <FROM>       <TO>         <MESSAGES>    
+    $ python sendsms.py 0982-532-661 0917-878-979 "How are you?" 
+    # useful options:
+     --dry     Dry run
+     --debug   Debug
+     --country Country code. Default: TW
+    ```
 
 Usage
 ---
@@ -29,10 +30,12 @@ Usage
 ### Config files (required)
 
 Default config file is ``smssend.cfg``.
-**Warning:** This file is readable in plain text.
+
+**Warning!** This file is readable in plain text.
 
 If you need to secure this file, please place it in a encrypted driver.
-Then read it by specify ``--config`` option.
+
+Then read it by specify ``--config`` option (or ``-c``).
 
 For example:
 ```bash
