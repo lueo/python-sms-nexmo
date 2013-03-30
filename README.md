@@ -5,22 +5,51 @@ Send your SMS by nexmo in one line.
 
 **tl;dr**
 
-1. Get a nexmo account and find your API_KEY and API_SECRET
+1. Get a [NEXMO](http://nexmo.com/, "Get a nexmo account") account and find your ``API_KEY`` and ``API_SECRET``
 
 ```bash
-echo "[Password]
-api_key = xxxxxx
+echo "[Password] \
+api_key = xxxxxx \
 api_secret = xxxxxx" > smssend.cfg
+```
 
-# python sendsms.py <FROM>       <TO>         <MESSAGES>     --country <COUNTRY_CODE>
-$ python sendsms.py 0982-532-661 0917-878-979 "How are you?" --country TW
+2. Send SMS!
+```bash
+# python sendsms.py <FROM>       <TO>         <MESSAGES>    
+$ python sendsms.py 0982-532-661 0917-878-979 "How are you?" 
 # useful options:
- --dry   Dry run
- --debug Debug
+ --dry     Dry run
+ --debug   Debug
+ --country Country code. Default: TW
 ```
 
 Usage
 ---
+
+### Config files (required)
+
+Default config file is ``smssend.cfg``.
+**Warning:** This file is readable in plain text.
+
+If you need to secure this file, please place it in a encrypted driver.
+Then read it by specify ``--config`` option.
+
+For example:
+```bash
+$ python sendsms.py <FROM> <TO> <MESSAGE> --config "D:\enc\sms.cfg"
+```
+### Country code (optional)
+
+If you omit the country code, the default country code is TW (Taiwan, ROC).
+
+You can specify it by ``--country`` option (or ``-r``).
+
+```bash
+$ python sendsms.py <FROM> <TO> <MESSAGE> --country US
+$ python sendsms.py <FROM> <TO> <MESSAGE> -r US
+```
+
+### Detail usage
 ```
 Usage: 
     sendsms.py [options] FROM_NUM TO_NUM MESSAGE
@@ -50,20 +79,29 @@ Options:
 Installation
 ---
 1. install virtualenv(optional)
-2. $ git clone git://github.com/lueo/python-sms-nexmo.git
-3. $ cd python-sms-nexmo
-4. $ pip install -r requirements.txt
+2. ``$ git clone git://github.com/lueo/python-sms-nexmo.git``
+3. ``$ cd python-sms-nexmo``
+4. ``$ pip install -r requirements.txt``
+5. Get a [NEXMO](http://nexmo.com/, "Get a nexmo account") account and find your ``API_KEY`` and ``API_SECRET``
+6. Prepare a config file, named as "smssend.cfg"
+
+```
+[Password]
+api_key = xxxxxx
+api_secret = xxxxxx
+```
 
 Then send SMS by executing:
 ```bash
-$ python sendsms.py FROM TO -c COUNTRY MESSAGE
+$ python sendsms.py FROM TO MESSAGE
 ```
+
 Requirements
 ---
 
-1. docopt
-2. phonenumbers
-3. schema
+1. [docopt](https://github.com/docopt/docopt)
+2. [python-phonenumbers](https://github.com/daviddrysdale/python-phonenumbers)
+3. [schema](https://github.com/halst/schema)
 
 Motivation
 ---
@@ -77,8 +115,8 @@ So I made this one.
 License
 ---
 
-GPL v3. See `LICENSE`
+GPL v3. See [License](http://github.com/lueo/python-sms-nexmo/tree/master/LICENSE)
 
 Thanks
 ---
-libpynexmo on github
+[libpynexmo on github](https://github.com/marcuz/libpynexmo)
