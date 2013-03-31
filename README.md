@@ -123,7 +123,7 @@ So I made this one.
 License
 ---
 
-GPL v3. See [License](http://github.com/lueo/python-sms-nexmo/tree/master/LICENSE)
+GPL v3. See [License](http://github.com/lueo/python-sms-nexmo/tree/master/LICENSE.md)
 
 Thanks
 ---
